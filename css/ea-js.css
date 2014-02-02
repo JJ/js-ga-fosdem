@@ -253,8 +253,8 @@ code {
        border-radius: 10px;
 }
 
-span.smaller { font-size:0.9em }
-span.smallest { font-size:0.75em }
+span.smaller { font-size:0.8em }
+span.smallest { font-size:0.6em }
 
 /* Customization */
 img { width: 90%;
