@@ -311,7 +311,51 @@ In the browser and in the server <span class='smaller'>and
 	     <div class='step' data-x='8000' data-y='-2000'>
 	       <h2>Putting evolutionary algorithms to REST</h2>
 
+<pre><code>
+do {
+  eo.generation();
+  generation_count++;
+} while ( eo.not_finished() && eo.current_run());
+if ( conf.peers ) {
+    var peer_url = conf.peers[ Math.floor(Math.random()*conf.peers.length )];
+	rest.get( peer_url+"/best" ).on('success', function(result) {
+           eo.incorporate( result.chromosome );
+      });
+    }
+    total_generations += generation_count;
+    if ( eo.way_to_go()  ) {
+	setImmediate( generations );
+    } else {
+        eo.we_re_done();
+	process.exit();
+</code></pre>
 	     </div>
+
+	     <div class='step' data-x='9000' data-y='-2000'>
+	       <h2>I want to be just a client</h2>
+
+<pre><code>    generation_count++;
+    eo.generation();
+    if ( generation_count % conf.generation_run === 0 ) {
+	rest.put( pool_url+"/one/" + eo.population[0])
+	    .on('complete', function(result) {
+		    if ( result instanceof Error ) {log_errer(); } 
+		});
+	rest.get( pool_url+"/random" )
+	    .on('complete', function(result) {
+		    if ( result instanceof Error ) { log_error(); } 
+                    else {
+			if ( result.chromosome) {
+			    eo.incorporate( result.chromosome );
+			}
+		    }
+		});</code></pre>
+	     </div>
+
+	     <div class='step' data-x='9000' data-y='-2000'>
+	       <h2>Better a peer or a client?</h2>
+
+	       
 
 
 	     <div class='step' data-x='9000' data-y='-2000'>
