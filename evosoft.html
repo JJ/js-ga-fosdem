@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>NodEO, a Multi-Paradigm Distributed Evolutionary Algorithm Platform in JavaScript</title>
+
+	<meta name="description" content="jmpress.js is a jQuery plugin to build a website on the infinite canvas">
+	<meta name="author" content="Kyle Robinson Young @shama & Tobias Koppers @sokra Modified by @jjmerelo JJ Merelo" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script-->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jmpress.custom.js"></script>
+	<script type="text/javascript" src="js/jquery.snippet.js"></script> <!-- highlight environment -->
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<!-- Jquery UI-->
+
+	<!-- my own stuff -->
+	<script type="text/javascript" src="js/SimplEA.js"></script>
+
+	<link href="css/ea-js.css" rel="stylesheet" type="text/css" />
+	<link rel='stylesheet' type ="text/css" href = "css/highlight.css" title='normal'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato|Telex|Lekton' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" />
+
+	<!-- highlight -->
+	<link rel="stylesheet" href="css/dark.css">
+	<script src="js/highlight.pack.js"></script>
+</head>
+<body>
+
+<div id="simple">
+
+	<div id="home" class="step">
+	  <h1>NodEO, a Multi-Paradigm Distributed Evolutionary Algorithm Platform in JavaScript</h1>
+	  <h2>Por <a href='http://twitter.com/jjmerelo'>JJ Merelo</a></h2>
+	  <h3><strong>FOSDEM</strong> 2014</h3>
+
+	  <h3><a href='http://creativecommons.org/licenses/by-sa/3.0/es/'><code>cc-by-sa</code></a> license; get it from <a href='http://jj.github.io/js-ga-fosdem/'><code>http://goo.gl/lJ0909</code></a></h3>
+	</div>
+
+	<div id='2tea' class='step' data-x='1000'>
+	  <h2>I love tea</h2>
+	  <img src='img/tea.jpg' alt='my cup of tea' >
+	</div>
+
+<div class='step' data-x='2000'>
+	  <h2>I wanted to make the best tea ever</h2>
+	  <img src='img/best-tea.jpg' alt='Two cups of tea' >
+	</div>
+
+<div class='step' data-x='3000'>
+	  <h2>Chose four different base teas: Keemun Congou, Maud,
+	  Golden Yunnan and Kandy</h2>
+	  <img src='img/mixture.jpg' alt='Blurred tea mixture' >
+	</div>
+
+<div class='step' data-x='4000'>
+	  <h2>And started to mix and match</h2>
+	  <img src='img/mix-n-match.jpg' alt='Blurred tea mixture' >
+	</div>
+
+<div class='step' data-x='5000'>
+	  <h2>Using different recipes</h2>
+	  <img src='img/recipes.jpg' alt='Recipes' >
+	</div>
+
+<div class='step' data-x='6000'>
+	  <h2>I took notes and scored them</h2>
+	  <img src='img/notes.jpg' alt='Notes' >
+	</div>
+
+<div class='step' data-x='7000'>
+	  <h2>Until I found <a href='http://abrete.lujoyglamour.net'>OpenTea</a></h2>
+	  <img src='img/opentea.jpg' alt='OpenTea packaged' >
+	</div>
+
+<div class='step' data-x='8000'>
+	  <h2>I liked it well enough</h2>
+	  <img src='img/opentea-box.png' alt='OpenTea packaged' >
+	</div>
+
+<div class='step' data-x='9000'>
+	  <h2>But you can't beat hundreds of years of tea-growing</h2>
+	  <img src='img/leaves.jpg' alt='OpenTea leaves' >
+	</div>
+
+<div class='step' data-x='9000' data-y='-1000'>
+	  <h2>Evolution works by random changes and natural selection</h2>
+	  <img src='img/finches.jpg' alt='Darwin's finches' >
+	  <p class='image'>Image
+	  by <a href='http://www.flickr.com/photos/spoinknet/90410207/sizes/o/'>Jared
+	  Zimmerman, taken from Darwin's book</a></p>
+	</div>
+
+<div class='step' data-x='8000' data-y='-1000'>
+	  <h2>And we can use that as an inspiration to solve search and optimization problems</h2>
+	  <img src='img/finches.jpg' alt='Darwin's finches' >
+	  <p class='image'>Image
+	  by <a href='http://www.flickr.com/photos/spoinknet/90410207/sizes/o/'>Jared
+	  Zimmerman, taken from Darwin's book</a></p>
+	</div>
+
+<div class='step' data-x='7000' data-y='-1000'>
+	  <h2>Like finding the best bridge structure</h2>
+	  <img src='img/bridge.jpg' alt='Bridge by Johannes Bader' style='top:350px'>
+	  <p class='image'>Image
+	  by <a href='http://www.flickr.com/photos/johannesbader/4386615368/'>Johannes
+	  Bader, from his PhD Thesis</a></p>
+	</div>
+
+<div class='step' data-x='6000' data-y='-1000'>
+	  <h2>First key is random variation: use a population of
+	  possible solutions</h2>
+
+<img src='img/population.jpg' alt='Population Johannes Bader'>
+	  <p class='image'>Image
+	  by <a href='http://www.flickr.com/photos/mattkowal/5179823067/'>Matt Kowal</a></p>
+	</div>
+
+<div class='step' data-x='5000' data-y='-1000'>
+	  <h2>Random mutation introduces more variations</h2>
+
+	  <div id='chromosome'
+	  class='chrom'>11111111000000001111111100000000</div>
+	  <form id='mutation' >
+	      <input type="submit" value="Evolve!" class='presshere'/>
+	  </form>
+	  <div id='new_chromosome' class='chrom'></div>
+	  <script type='text/javascript'>
+	    $("#mutation").submit(function(){
+	    var new_guy = mutate($("#chromosome").text());
+	    $("#new_chromosome").text(new_guy);
+	    return false;
+	    });
+	  </script>
+</div>
+	  <div class='step' data-x='4000' data-y='-1000'>
+	    <h2>But that's a mutie!</h2>
+
+	    <img src='img/mutie.jpg' alt='Mutant dog, check out origin at 374791126_f18089a883_b.jpg'>
+
+	  </div>
+
+	   <div class='step' data-x='3000' data-y='-1000'>
+	    <h2>Population-based mutation is not much better than random search</h2>
+
+	    <h3>It takes you nowhere, and does so very slowly</h3>
+
+	  </div>
+
+	   <div class='step' data-x='3000' data-y='-1000'>
+	     <h2>Is sex still on the table?</h2>
+
+	  <div id='parent1'
+	       class='chrom'>11111111000000001111111100000000</div>
+	  <div id='parent2'
+	       class='chrom'>00000000111111110000000011111111</div>
+	  <form id='crossover' >
+	      <input type="submit" value="Do it!" class='presshere'/>
+	  </form>
+	  <div id='offspring' class='chrom'></div>
+	  <script type='text/javascript'>
+	    $("#crossover").submit(function(){
+	    var new_guy = crossover($("#parent1").text(),$("#parent2").text());
+	    $("#offspring").text(new_guy);
+	    return false;
+	    });
+	  </script>
+
+	  </div>
+
+	   <div class='step' data-x='2000' data-y='-1000'>
+	     <h2>It's a blind watchmaker</h2>
+
+	     <h2>Crossover creates <em>genetic</em> variability and combines solutions</h2>
+
+	   </div>
+
+	    <div class='step' data-x='1000' data-y='-1000'>
+	     <h2>But who's the king of the hill?</h2>
+
+	     <img src='img/unfit.jpg' alt='Originally by 14517351_a0efb34914_b_d.jpg'>
+
+	     <h3>Every individual is <em>evaluated</em> and assigned a <strong>fitness</strong>. Only the fittest survive</h3>
+
+	     <p class='image'>Unfit for JavaScript. Will not survive even if the Red Bull dose is increased.</p>
+	    </div>
+
+	    <div class='step' data-x='0' data-y='-1000'>
+	      <h2>To every one its own</h2>
+	      
+	      <table style='width:100%'><tr>
+		  <td id='gen1' class='left'></td>
+		  <td>
+		    <form id='eval' >
+		      <input type="submit" value="Fit?" class='presshere' style='float:none:overflow:hidden'/>
+		    </form>
+		  </td>
+	      <td id='gen2' class='right'></td>
+		</tr>
+	      </table>
+	      
+	  <script type='text/javascript' src='js/eval.js'> </script>
+	    </div>
+
+	    <div class='step' data-x='0' data-y='-2000'>
+	      <h2>Only the fittest leave a mark</h2>
+	      
+	      <table  style='width:100%'>
+		<tr>
+		  <td id='repro1' class='left'></td>
+		  <td>
+		    <form id='repro' >
+		      <input type="submit" value="Replicate!" class='presshere' style='float:none'/>
+		    </form>
+		  </td>
+		  <td id='repro2' class='right'></td>
+		</tr>
+	      </table>
+	      
+	      <script type='text/javascript' src='js/reproduce.js'> </script>
+	    </div>  
+
+	    <div class='step' data-x='1000' data-y='-2000'>
+	      <h2>Let's see how all this plays together</h2>
+	    
+	      <h3>Check it out at <a href='http://jj.github.io/nodeo/app/browser/chart.html'>http://goo.gl/yXpcKG</a></h3>
+
+	    </div>
+
+	    <div class='step' data-x='1000' data-y='-2000'>
+	      <h2>Evolution is not forever</h2>
+
+<pre><code>(function do_ea() {
+	eo.generation();
+	generation_count++;
+	if ( (generation_count % 100 === 0) ) {
+           do_periodic_stuff()
+	}
+	if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b ) 
+	    && ( generation_count*conf.population_size < conf.max_evaluations)) {
+	    setTimeout(do_ea, 5);
+	} else {
+	    we_are_done();
+	}
+    })();</code></pre>
+	    </div>
+
+ <div class='step' data-x='2000' data-y='-2000'>
+	      <h2>Why would I want anything evolved in the browser?</h2>
+
+	      <h3>Same reason you want anything done in the browser</h3>
+		
+	      <ul><li>Offload server</li>
+		<li>Distribute computational loads</li>
+		<li>Interact with user</li>
+	      </ul>
+ </div>
+
+	<div class='step' data-x='3000' data-y='-2000'>
+	      <h2>Newspaper layout optimization</h2>
+	      <img src='img/ZAPN6.png' alt='automatic newspaper layout'>
+	      <p class='image'>Jorge González, Juan J. Merelo Guervós, Pedro A. Castillo Valdivieso, Víctor Manuel Rivas Santos, Gustavo Romero: Optimizing Web Newspaper Layout Using Simulated Annealing. IWANN (2) 1999: 759-768</p>
+	</div>
+
+	    <div class='step' data-x='4000' data-y='-2000'>
+	      <h2>Volunteer || unwitting computation</h2>
+
+	      <h3>With button: volunteer. Without: unwitting</h3>
+
+	      <ul>
+		<li>Get the browser to compute stuff and send it via XHR to the server.</li>
+		<li>Send with response more stuff to compute.</li>
+		<li>Do it until the experiment is finished.</li>
+	      </ul>
+	    </div>
+
+	     <div class='step' data-x='5000' data-y='-2000'>
+	       <h2>How many users can you get?</h2>
+
+	       <img src='img/agajaj.png' alt='Getting users by the bushel' >
+
+	       <p class='image'>Merelo-Guervós, J. J., Castillo, et al. Asynchronous distributed genetic algorithms with Javascript and JSON. In IEEE Congress on Evolutionary Computation, 2008 pp. 1372-1379. IEEE.</p>
+	     </div>
+
+	     <div class='step' data-x='6000' data-y='-2000'>
+	       <h2>Server pains</h2>
+
+	       <h3>First version of <a href='http://nodejs.org/changelog.html'>node.js in 2009</a>. We had SpiderMonkey, but not the same.</h3>
+
+	       <p>Further versions using FluidDB and CouchDB. Not bad, but not excellent. Main problem, dealing with latency</p>
+	     </div>
+
+	     <div class='step' data-x='7000' data-y='-2000'>
+	       <h2>Fast forward to 2014</h2>
+
+	       <img src='img/nodeo.png' alt='nodeo in npm' />
+
+	       <p class='image'>Available at <a href='http://github.com/JJ/nodeo'>http://github.com/JJ/nodeo (+ experimental data)</a></p>
+	     </div>
+
+	     <div class='step' data-x='7000' data-y='-3000'>
+	       <h2>And we also have MOOTools</h2>
+
+	       <h3><a href='https://github.com/CANUBE/jsEO'>jsEO is an object-oriented implementation of an evolutionary algorithm using MooTools</a></h3>
+	     </div>
+	     
+	     <div class='step' data-x='6000' data-y='-3000'><pre><code>var jsEOGA = new Class({
+    Extends: jsEOAlgorithm, /** more stuff after this **/
+    privateRun: function(_fitFn, _numGenerations, _showing) {
+        var popSize = this.population.length();
+        this.population.sort();
+        for (var j = 0; (j < _numGenerations); ++j) {
+            var newPop = this.indivSelector.operate(this.population);
+            for (var i = 0; i < newPop.length(); ++i) {
+                var tmpPop = new jsEOPopulation();
+                tmpPop.add(newPop.getAt(i)).join(newPop);
+                tmpPop = this.operSelector.
+                        operate().
+                        operate(tmpPop).
+                        evaluate(_fitFn);
+                newPop.setAt(i, tmpPop.getAt(0));
+            }
+            this.population.join(newPop).sort().crop(popSize);
+            if (typeof this.opSend != 'undefined' && this.opSend != null) {
+                this.opSend.operate(this.population);
+            }
+        } //for numGenerations
+    },
+    run: function() {
+        this.privateRun();
+    }
+});</code></pre>
+				<p class='image'>Code @<a href='https://github.com/CANUBE/jsEO/blob/master/js/libs/jsEO/core/algorithms/jsEOGA.js'>http://git.io/jseo</a> by @vrivas.</p>
+				</div>
+
+	     
+	     <div class='step' data-x='5000' data-y='-3000'>
+	       <h2>But we need to put evolutionary algorithms to REST</h2>
+
+<pre><code>
+do {
+  eo.generation();
+  generation_count++;
+} while ( eo.not_finished() && eo.current_run());
+if ( conf.peers ) {
+    var peer_url = conf.peers[ Math.floor(Math.random()*conf.peers.length )];
+	rest.get( peer_url+"/best" ).on('success', function(result) {
+           eo.incorporate( result.chromosome );
+      });
+    }
+    total_generations += generation_count;
+    if ( eo.way_to_go()  ) {
+	setImmediate( generations );
+    } else {
+        eo.we_re_done();
+	process.exit();
+    }</code></pre>
+	     </div>
+
+	     <div class='step' data-x='4000' data-y='-3000'>
+	       <h2>I want to be just a client</h2>
+
+<pre><code>    generation_count++;
+    eo.generation();
+    if ( generation_count % conf.generation_run === 0 ) {
+	rest.put( pool_url+"/one/" + eo.population[0])
+	    .on('complete', function(result) {
+		    if ( result instanceof Error ) {log_errer(); } 
+		});
+	rest.get( pool_url+"/random" )
+	    .on('complete', function(result) {
+		    if ( result instanceof Error ) { log_error(); } 
+                    else {
+			if ( result.chromosome) {
+			    eo.incorporate( result.chromosome );
+			}
+		    }
+		});</code></pre>
+	     </div>
+
+	     <div class='step' data-x='3000' data-y='-3000'>
+	       <h2>Better a peer or a client?</h2>
+
+	       <img src='img/par-pool-hits-pop.png' alt='peer of a client'>
+
+	       <p class='image'>>Submitted to GECCO'2014 conference; and <strong>Open Science in GitHub </strong>.</p>
+
+			     </div>
+
+	     <div class='step' data-x='2000' data-y='-3000'>
+	       <h2>And back to the browser</h2>
+	       
+	       <h3>Using browserify and with help from #browserify @irc.freenode.net</h3>
+
+	       <ul><li>Actually used in this persentation, in the live demo.</li>
+		 <li>Same code on the client and on the server oh my!</li>
+	       </ul>
+	     </div>
+
+	      <div class='step' data-x='1000' data-y='-3000'>
+		<h2>Fulfilling promises</h2>
+
+		<h3>TODO list</h3>
+
+		<ul><li>Write papers.</li>
+		  <li>Websockets, <code>sockets.io</code>.</li>
+		  <li>Volunteer computing setup, PaaS.</li>
+		  <li>Re-think the underlying evolutionary algorithm using <em>promises</em></li>
+		  <li>Continue developing <code>nodeo</code>.</li>
+		  <li>Any suggestion?</li>
+		</ul>
+	      </div>
+
+	      <div class='step' data-y='-3000'>
+		<h2>Where's the beef?</h2>
+
+		<h2>Javascript is great for computer science && distributed evolutionary computation && massively scalable browser-based volunteer computing stuff</h2>
+
+	      </div>
+	     
+	<div id='end' class='step' data-y='-4000' >
+	  <h2>That's all</h2>
+
+	  <h2>Questions?</h2>
+	  
+	  <h3>Check out <a href='http://musesproject.eu'>MUSES, mobile
+	      corporate security</a>- Follow our research at <a href='http://twitter.com/jjmerelo'>@geneura</a> (or look us up for European H2020 projects) or
+	    buy my novels at  <a href='http://www.amazon.som/s/?_encoding=UTF8&camp=3626&creative=24822&field-author=Juan%20Juli%C3%A1n%20Merelo%20Guerv%C3%B3s&linkCode=ur2&search-alias=digital-text&tag=atalaya-21'>Amazon</a></h3>
+	  
+	  <h2>Download this presentation from <a href='http://github.com/JJ/js-ga-fosdem'>git.io/uniajq</a></h2>
+	</div>
+
+</div>
+
+<div class="hint">
+    <p>Use arrows for navigation</p>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#simple').jmpress();
+        $("pre.js").snippet("javascript",{style:"peachpuff",
+                                          transparent:false,
+                                          showNum:true});
+        $("#html1").snippet("html",{style:"navy",
+                                          transparent:false,
+                                          showNum:true});
+
+        hljs.initHighlightingOnLoad();
+});
+</script>
+
+</body>
+</html>
