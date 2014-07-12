@@ -263,6 +263,11 @@ img { width: 90%;
       z-index: -1}
 
 
+img.center { width: 90%;
+      position: absolute;
+      top:250px;
+      z-index: -1}
+
 .presshere {
 	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
