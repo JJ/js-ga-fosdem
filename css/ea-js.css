@@ -1,7 +1,7 @@
 /** GENERAL **/
 body {
 	font-family: Verdana, sans-serif;
-	min-height: 600px;
+	min-height: 700px;
 	background-color: #ddd;
 	-webkit-font-smoothing: antialiased;
 }
@@ -9,9 +9,9 @@ body {
 /** STEP STYLES **/
 .step {
 	width: 900px;
-	height: 600px;
+	height: 700px;
 	font-size: 1em;
-	min-height: 600px;
+	min-height: 700px;
 	background-color: white;
 	opacity: 1;
 	-moz-opacity: 1;
