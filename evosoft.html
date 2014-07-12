@@ -140,7 +140,7 @@
 	   </div>
 
 	    <div class='step' data-x='3000' data-y='1000'>
-	      <h2>Hos this plays out on the browser</h2>
+	      <h2>How this plays out on the browser</h2>
 
 <pre><code>(function do_ea() {
 	eo.generation();
@@ -157,40 +157,31 @@
     })();</code></pre>
 	    </div>
 
-	<div class='step' data-x='3000' data-y='-2000'>
-	      <h2>Newspaper layout optimization</h2>
-	      <img src='img/ZAPN6.png' alt='automatic newspaper layout'>
-	      <p class='image'>Jorge González, Juan J. Merelo Guervós, Pedro A. Castillo Valdivieso, Víctor Manuel Rivas Santos, Gustavo Romero: Optimizing Web Newspaper Layout Using Simulated Annealing. IWANN (2) 1999: 759-768</p>
-	</div>
+ <div class='step' data-x='3000' data-y='1000'>
+	      <h2>And in the server... </h2>
 
-	    <div class='step' data-x='4000' data-y='-2000'>
-	      <h2>Volunteer || unwitting computation</h2>
+<pre><code>generate_population();
+do_evolution();
 
-	      <h3>With button: volunteer. Without: unwitting</h3>
+function do_evolution(){
+  single_generation();
+  if (time_to_migrate()) {
+    migrate_out();
+    migrate_in();
+  }
+  if ( !evolution_end() ) {
+    do_after_callbacks( do_evolution);
+  }
+}</code></pre>
+ </div>
 
-	      <ul>
-		<li>Get the browser to compute stuff and send it via XHR to the server.</li>
-		<li>Send with response more stuff to compute.</li>
-		<li>Do it until the experiment is finished.</li>
-	      </ul>
-	    </div>
-
-	     <div class='step' data-x='5000' data-y='-2000'>
-	       <h2>How many users can you get?</h2>
-
-	       <img src='img/agajaj.png' alt='Getting users by the bushel' >
-
-	       <p class='image'>Merelo-Guervós, J. J., Castillo, et al. Asynchronous distributed genetic algorithms with Javascript and JSON. In IEEE Congress on Evolutionary Computation, 2008 pp. 1372-1379. IEEE.</p>
-	     </div>
-
-
-	     <div class='step' data-x='7000' data-y='-2000'>
-	       <h2>Fast forward to 2014</h2>
-
-	       <img src='img/nodeo.png' alt='nodeo in npm' />
-
-	       <p class='image'>Available at <a href='http://github.com/JJ/nodeo'>http://github.com/JJ/nodeo (+ experimental data)</a></p>
-	     </div>
+ <div class='step' data-x='2000' data-y='1000'>
+   <h2>Let's get to the EvoSoft thingie</h2>
+   
+   <img src='img/nodeo.png' alt='nodeo in npm' />
+   
+   <p class='image'>Available at <a href='http://github.com/JJ/nodeo'>http://github.com/JJ/nodeo (+ experimental data)</a></p>
+ </div>
 
 	     <div class='step' data-x='7000' data-y='-3000'>
 	       <h2>And we also have MOOTools</h2>
