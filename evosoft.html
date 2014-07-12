@@ -184,10 +184,9 @@ function do_evolution(){
  </div>
 
 	     <div class='step' data-x='0' data-y='1000'>
-	       <h2>Let's use NodEO to implemente distributed EAs</h2>
+	       <h2>NodEO for distributed EAs</h2>
 
-<pre><code>
-do {
+<pre><code>do {
   eo.generation();
   generation_count++;
 } while ( eo.not_finished() && eo.current_run());
@@ -204,9 +203,9 @@ if ( conf.peers ) {
         eo.we_re_done();
 	process.exit();
     }</code></pre>
-	     </div>
+</div>
 
-	     <div class='step' data-x=-1000' data-y='1000'>
+	     <div class='step' data-x='-1000' data-y='1000'>
 	       <h2>I want to be just a client</h2>
 
 <pre><code>    generation_count++;
@@ -214,11 +213,10 @@ if ( conf.peers ) {
     if ( generation_count % conf.generation_run === 0 ) {
 	rest.put( pool_url+"/one/" + eo.population[0])
 	    .on('complete', function(result) {
-		    if ( result instanceof Error ) {log_errer(); } 
+		    if ( result instanceof Error ) {log_errer(); }
 		});
 	rest.get( pool_url+"/random" )
 	    .on('complete', function(result) {
-		    if ( result instanceof Error ) { log_error(); } 
                     else {
 			if ( result.chromosome) {
 			    eo.incorporate( result.chromosome );
@@ -227,48 +225,56 @@ if ( conf.peers ) {
 		});</code></pre>
 	     </div>
 
-<div class='step' data-x=-1000' data-y='0'>
-  <h2>Better an island...</h2>
+<div class='step' data-x=-2000' data-y='1000'>
+  <h2>The right population</h2>
 
- <img class='center' src='img/islands.jpg' alt='islands'>
+ <img class='figures' src='img/base-hits-pop.png' alt='Base-hit'>
   
-<p class='image'>Image by John Finn <a href='https://flic.kr/p/fHz9JV'>https://flic.kr/p/fHz9JV</a></p>
+</div>
+
+<div class='step' data-x=-2000' data-y='0'>
+  <h2>Where should we run it?</h2>
+
+ <img class='figures' src='img/benchmark.png' alt='VM comparison'>
+  
+</div>
+
+<div class='step' data-x=-1000' data-y='0'>
+  <h2>Better a pool...</h2>
+
+ <img class='center' src='img/pool.jpg' alt='islands'>
+  
+<p class='image'>Image by Sarah Ackerman <a href='https://flic.kr/p/fSPGrs'>https://flic.kr/p/fSPGrs</a></p>
 </div>
 
 <div class='step' data-x=-1000' data-y='-1000'>
-  <h2>.. or a peer to peer?</h2>
+  <h2>.. or peer to peer?</h2>
 
  <img class='center' src='img/perrinos.jpg' alt='canine tug of war'>
   
 <p class='image'>Image by vanhookc <a href='https://flic.kr/p/9B61uF'>https://flic.kr/p/9B61uF</a></p>
 </div>
 
-<div class='step' data-x=-1000' data-y='1000'>
-	     <div class='step' data-x='3000' data-y='-3000'>
-	       <h2>Better a peer or a client?</h2>
+	     <div class='step' data-x='-1000' data-y='-2000'>
+	       <h2>Who arrives first?</h2>
 
-	       <img src='img/par-pool-hits-pop.png' alt='peer of a client'>
+	       <img class='figures' src='img/par-pool-time-pop.png' alt='peer of a client'>
 
 	     </div>
 
-	      <div class='step' data-x='1000' data-y='-3000'>
-		<h2>Fulfilling promises</h2>
+ <div class='step' data-x='-1000' data-y='-3000'>
+	       <h2>And who's the best at getting there?</h2>
 
-		<h3>TODO list</h3>
+	       <img class='figures' src='img/par-pool-hits-pop.png' alt='peer of a client'>
 
-		<ul><li>Write papers.</li>
-		  <li>Websockets, <code>sockets.io</code>.</li>
-		  <li>Volunteer computing setup, PaaS.</li>
-		  <li>Re-think the underlying evolutionary algorithm using <em>promises</em></li>
-		  <li>Continue developing <code>nodeo</code>.</li>
-		  <li>Any suggestion?</li>
-		</ul>
-	      </div>
+	     </div>
 
 	      <div class='step' data-y='-3000'>
 		<h2>Where's the beef?</h2>
 
-		<h2>Javascript is great for computer science && distributed evolutionary computation && massively scalable browser-based volunteer computing stuff</h2>
+		<h2>Javascript is great <span class='smaller'>for computer science && distributed evolutionary computation</span> <span class='smallest'>&& massively scalable browser-based volunteer computing stuff</span></h2>
+
+		<h3>But if you use it, a pool-based system is probably a better idea</h3>
 
 	      </div>
 	     
