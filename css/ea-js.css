@@ -1,7 +1,7 @@
 /** GENERAL **/
 body {
 	font-family: Verdana, sans-serif;
-	min-height: 740px;
+	min-height: 600px;
 	background-color: #ddd;
 	-webkit-font-smoothing: antialiased;
 }
@@ -11,7 +11,7 @@ body {
 	width: 900px;
 	height: 600px;
 	font-size: 1em;
-	min-height: 700px;
+	min-height: 600px;
 	background-color: white;
 	opacity: 1;
 	-moz-opacity: 1;
